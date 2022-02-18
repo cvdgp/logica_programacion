@@ -3,16 +3,22 @@ body{
     color: aquamarine;
 }
 article{
-    color: blue;
+    color: whitesmoke;
     font-size: 1.5em;
 }
-div>div{
-    color: red;
+#resultado{
+    background: rgb(53, 41, 41);
+    color: rgb(7, 3, 12);
+    float: left;
+    border: 50%;
+}
+div > div{
+    color: rgb(17, 1, 1);
     float: left;
     font-size: 0.8em;
     margin: 0.5em;
     padding: 0.6em;
-    background-color: rgb(48, 45, 45);
+    background-color: rgb(110, 102, 102);
     border-radius: 60%;
 }
 .cargador{
