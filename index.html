@@ -5,10 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/main.css">
+    <style>
+        body{
+    background: black;
+    color: aquamarine;
+}
+article{
+    color: whitesmoke;
+    font-size: 1.5em;
+}
+#resultado{
+    background: rgb(53, 41, 41);
+    color: rgb(7, 3, 12);
+    float: left;
+    border: 50%;
+}
+#txt > div{
+    color: rgb(17, 1, 1);
+    float: left;
+    font-size: 0.8em;
+    margin: 0.5em;
+    padding: 0.6em;
+    background-color: rgb(110, 102, 102);
+    border-radius: 60%;
+
+}
+.cargador{
+    margin: 1.5em;
+    background: wheat;
+}
+    </style>
 </head>
 <body>
-    <header> <h1>Encabezado</h1></header>
+    <header> <h1>Números divisibles entre 3 y 5</h1></header>
     <article>
         <p>Si enumeramos todos los números naturales debajo de 10 que son múltiplos de 3 o 5, obtenemos 3, 5, 6 y 9. La suma de estos múltiplos es 23.
 
@@ -16,10 +45,60 @@
         <p>Encuentra la suma de todos los múltiplos de 3 o 5 por debajo de 1000.
 
         </p>
+        <ol>
+            <li>Confirmamos si el resto de dividir el número entre 3 y 5 es 0.</li>
+            <li>Si el resto es igual a 0  almacenamos el número.</li>
+            <li>Si el resto es igual a 0 lo sumamos.</li>
+            <li>Imprimimos el sumatorio en un div.</li>
+            <li> Imprimimos los múltiplos de 5 y 3 en divs que se posicionarán uno al lado del otro.</li>
+        </ol>
+        <code class="cajaCodigo"><pre>
+            let resultado = 0;
+            let num =[];
+            let textoIntroducido = "";
+            let cargadorTxt     =   document.getElementById("txt");
+            let resultadoSuma   =   document.getElementById("resultado");
+           
+           
+           for(let i = 1 ; i &lt; 1000; i++ ){
+               if(i%3 == 0) num.push(i);
+               if(i%5 == 0) num.push(i);
+           }
+           num.forEach((element)=>{
+               resultado += element;
+               textoIntroducido += "&lt;div class=´cargador´>" + element + "&lt;/div>";
+           
+           }); 
+           
+           resultadoSuma.innerHTML = "La suma de todos los números es:  "  +  resultado;
+           cargadorTxt.innerHTML =  textoIntroducido;
+        </pre></code>
         <div id="resultado"></div>
         <div id="txt"></div>
     </article>
     
+    <script>
+         let resultado = 0;
+ let num =[];
+ let textoIntroducido = "";
+ let cargadorTxt     =   document.getElementById("txt");
+ let resultadoSuma   =   document.getElementById("resultado");
+
+
+for(let i = 1 ; i < 1000; i++ ){
+    if(i%3 == 0) num.push(i);
+    if(i%5 == 0) num.push(i);
+}
+num.forEach((element)=>{
+    resultado += element;
+    textoIntroducido += "<div class=´cargador´>" + element + "</div>";
+
+}); 
+
+resultadoSuma.innerHTML = "La suma de todos los números es:  "  +  resultado;
+cargadorTxt.innerHTML =  textoIntroducido;
+
+    </script>
     
 </body>
 </html>
